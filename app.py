@@ -192,14 +192,14 @@ if page == "Overview":
     col_a, col_b = st.columns(2)
 
     with col_a:
-        # Top 15 parties by total votes
+        # Top 10 parties by total votes
         party_votes = (
             filtered_df.groupby("PARTY")["TOTAL_VOTES"].sum()
-            .sort_values(ascending=False).head(15).reset_index()
+            .sort_values(ascending=False).head(10).reset_index()
         )
         fig = px.bar(
             party_votes, x="TOTAL_VOTES", y="PARTY", orientation="h",
-            title="Top 15 Parties by Total Votes",
+            title="Top 10 Parties by Total Votes",
             labels={"TOTAL_VOTES": "Total Votes", "PARTY": ""},
             color="TOTAL_VOTES", color_continuous_scale=["#1e293b", "#7c3aed", "#a78bfa"],
         )
@@ -222,11 +222,11 @@ if page == "Overview":
         st.plotly_chart(fig, use_container_width=True)
 
     # Candidates per party (top 20)
-    cand_count = filtered_df[~filtered_df["PARTY"].isin(["NOTA", "IND"])].groupby("PARTY")["CANDIDATE_NAME"].count().sort_values(ascending=False).head(20).reset_index()
+    cand_count = filtered_df[~filtered_df["PARTY"].isin(["NOTA", "IND"])].groupby("PARTY")["CANDIDATE_NAME"].count().sort_values(ascending=False).head(15).reset_index()
     cand_count.columns = ["PARTY", "CANDIDATES"]
     fig = px.bar(
         cand_count, x="PARTY", y="CANDIDATES",
-        title="Number of Candidates Fielded — Top 20 Parties",
+        title="Number of Candidates Fielded — Top 15 Parties",
         color="CANDIDATES", color_continuous_scale=["#1e293b", "#0ea5e9", "#60a5fa"],
         labels={"CANDIDATES": "Candidates", "PARTY": "Party"},
     )
