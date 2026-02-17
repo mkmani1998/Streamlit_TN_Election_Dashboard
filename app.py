@@ -6,8 +6,7 @@ from plotly.subplots import make_subplots
 
 # ── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Tamil Nadu Legislative Assembly election
- Results",
+    page_title= "Tamil Nadu Legislative Assembly election Results",
     page_icon="🗳️",
     layout="wide",
     initial_sidebar_state="expanded",
