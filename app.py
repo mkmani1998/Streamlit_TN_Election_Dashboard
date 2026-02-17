@@ -222,7 +222,7 @@ if page == "Overview":
         st.plotly_chart(fig, use_container_width=True)
 
     # Candidates per party (top 20)
-    cand_count = filtered_df.groupby("PARTY")["CANDIDATE_NAME"].count().sort_values(ascending=False).head(20).reset_index()
+    cand_count = filtered_df[~filtered_df["PARTY"].isin(["NOTA", "IND"])].groupby("PARTY")["CANDIDATE_NAME"].count().sort_values(ascending=False).head(20).reset_index()
     cand_count.columns = ["PARTY", "CANDIDATES"]
     fig = px.bar(
         cand_count, x="PARTY", y="CANDIDATES",
