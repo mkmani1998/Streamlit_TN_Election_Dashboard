@@ -6,7 +6,8 @@ from plotly.subplots import make_subplots
 
 # ── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Tamil Nadu Election Results",
+    page_title="Tamil Nadu Legislative Assembly election
+ Results",
     page_icon="🗳️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -172,7 +173,8 @@ def apply_theme(fig):
 if page == "Overview":
     st.markdown("""
     <div class="page-banner">
-        <h1>Tamil Nadu <span class="accent">Election Results</span></h1>
+        <h1>Tamil Nadu Legislative Assembly Election
+ <span class="accent"> 2021 Results</span></h1>
         <p>Comprehensive breakdown of candidate performance across all constituencies</p>
     </div>
     """, unsafe_allow_html=True)
