@@ -22,7 +22,7 @@ html, body, [class*="css"] {
 }
 
 h1, h2, h3 {
-    font-family: 'Bebas Neue', sans-serif !important;
+    font-family: 'Averia Libre', sans-serif !important;
 }
 
 .block-container { padding-top: 2rem; padding-bottom: 2rem; }
